@@ -141,32 +141,29 @@ if [[  $(sudo lxc ls -c ns --format csv $server |grep RUNNING|cut -f1 -d,|wc -l)
 log_info "${GREEN} Copying Script in $server Server - Please Wait.. ${CLEAR}"
 sudo lxc exec $server -- useradd vagrant </dev/null
 case $server in
-kafka*)
-sudo lxc file push /tmp/kafka.sh $server/tmp/ </dev/null 
-case $server in
 kafka1)
-sudo lxc file push /tmp/kafka1.properties $server/tmp/ </dev/null && run_script $server
+sudo lxc file push /tmp/kafka.sh $server/tmp/ </dev/null
+sudo lxc file push /tmp/configs/kafka1.properties $server/tmp/ </dev/null && run_script $server
 ;;
 kafka2)
-sudo lxc file push /tmp/kafka2.properties $server/tmp/ </dev/null && run_script $server
+sudo lxc file push /tmp/kafka.sh $server/tmp/ </dev/null
+sudo lxc file push /tmp/configs/kafka2.properties $server/tmp/ </dev/null && run_script $server
 ;;
 kafka3)
-sudo lxc file push /tmp/kafka3.properties $server/tmp/ </dev/null && run_script $server
+sudo lxc file push /tmp/kafka.sh $server/tmp/ </dev/null
+sudo lxc file push /tmp/configs/kafka3.properties $server/tmp/ </dev/null && run_script $server
 ;;
-esac
-zk*)
-sudo lxc file push /tmp/zk.sh $server/tmp/ </dev/null
-case $server in
 zk1)
-sudo lxc file push /tmp/zk1.cfg  $server/tmp/ </dev/null && run_script $server
+sudo lxc file push /tmp/zk.sh $server/tmp/ </dev/null
+sudo lxc file push /tmp/configs/zk1.cfg  $server/tmp/ </dev/null && run_script $server
 ;;
 zk2)
-sudo lxc file push /tmp/zk2.cfg  $server/tmp/ </dev/null && run_script $server
+sudo lxc file push /tmp/zk.sh $server/tmp/ </dev/null
+sudo lxc file push /tmp/configs/zk2.cfg  $server/tmp/ </dev/null && run_script $server
 ;;
 zk3)
-sudo lxc file push /tmp/zk3.cfg  $server/tmp/ </dev/null && run_script $server
-;;
-esac
+sudo lxc file push /tmp/zk.sh $server/tmp/ </dev/null
+sudo lxc file push /tmp/configs/zk3.cfg  $server/tmp/ </dev/null && run_script $server
 ;;
 esac
 echo " OK!"
