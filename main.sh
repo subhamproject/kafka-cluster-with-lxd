@@ -173,3 +173,19 @@ done
 
 spin_server
 copy_script
+
+for server in kafka1 kafka2 kafka3 zk1 zk2 zk3;do
+[ $(sudo lxc ls -c ns --format csv $server|grep RUNNING|cut -f1 -d,|wc -l) -lt 1 ] && sudo lxc start $server </dev/null
+case $server in
+kafka*)
+sudo lxc exec $server -- service kafka stop </dev/null
+sleep 5
+sudo lxc exec $server -- service kafka start </dev/null
+;;
+zk*)
+sudo lxc exec $server -- service zookeeper stop </dev/null
+sleep 5
+sudo lxc exec $server -- service zookeeper start </dev/null
+;;
+esac
+done
