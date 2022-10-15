@@ -11,8 +11,8 @@ done
 echo "$HOST is up on port $PORT"
 }
 
-SERVER=zk1:2181,zk2:2181,zk3:2181
-[[ -z $SERVER ]] && { echo "Please provide Zookeeper server details" ; exit 1 ; }
+SERVER=""
+[[ -z $SERVER ]] && { echo "Please provide Zookeeper server details" ; }
 
 if [[ -n $SERVER ]];then
 IFS=','; for name in $SERVER; do
