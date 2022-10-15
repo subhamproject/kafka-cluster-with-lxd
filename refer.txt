@@ -1,0 +1,14 @@
+
+https://manjit28.medium.com/installing-apache-kafka-and-zookeeper-on-raspberry-pi-ubuntu-cluster-2cd0bb1f3c94
+
+https://www.howtoforge.com/tutorial/how-to-install-apache-zookeeper-on-ubuntu-2004/
+
+https://idroot.us/install-apache-zookeeper-ubuntu-20-04/
+
+https://www.howtoforge.com/tutorial/ubuntu-apache-kafka-installation/
+
+https://linuxhint.com/install-apache-kafka-ubuntu-22-04/
+
+https://idroot.us/install-apache-zookeeper-ubuntu-20-04/
+
+
