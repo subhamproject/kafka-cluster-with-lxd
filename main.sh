@@ -174,4 +174,4 @@ done
 spin_server
 copy_script
 
-log_info "*** ${GREEN} KAFKA VERSION :- $(lxc exec kafka2 -- bash /kafka/bin/kafka-topics.sh --version <</dev/null) HAS BEEN CONFIGURED *** ${CLEAR}"
+log_info "*** ${GREEN} KAFKA VERSION :- $(lxc exec kafka2 -- bash /kafka/bin/kafka-topics.sh --version </dev/null) HAS BEEN CONFIGURED *** ${CLEAR}"
