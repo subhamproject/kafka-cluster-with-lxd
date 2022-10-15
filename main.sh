@@ -120,7 +120,7 @@ done
 
 function run_script() {
 server=$1
-log_info "${GREEN} Adding ansible user to $server server - Please Wait.. ${CLEAR}"
+log_info "${GREEN} Adding vagrant user to $server server and running config script - Please Wait.. ${CLEAR}"
 case $server in
 kafka*)
 sudo lxc exec $server -- bash /tmp/kafka.sh  </dev/null
