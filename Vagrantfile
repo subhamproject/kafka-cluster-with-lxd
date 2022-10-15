@@ -26,12 +26,6 @@ Vagrant.configure(2) do |config|
       node.vm.provision "file", source: "kafka.sh", destination: "/tmp/kafka.sh"
       node.vm.provision "file", source: "zk.sh", destination: "/tmp/zk.sh"
       node.vm.provision "file", source: './configs', destination: "/tmp/configs"
-      node.vm.provision "file", source: "kafka1.properties", destination: "/tmp/kafka1.properties"
-      node.vm.provision "file", source: "kafka2.properties", destination: "/tmp/kafka2.properties"
-      node.vm.provision "file", source: "kafka3.properties", destination: "/tmp/kafka3.properties"
-      node.vm.provision "file", source: "zk1.cfg", destination: "/tmp/zk1.cfg"
-      node.vm.provision "file", source: "zk2.cfg", destination: "/tmp/zk2.cfg"
-      node.vm.provision "file", source: "zk3.cfg", destination: "/tmp/zk3.cfg"
       node.vm.provision "shell",privileged: true, inline: $COMMANDS
       node.vm.provision :shell, privileged: true, :inline => "bash /tmp/main.sh"
       node.vm.network "private_network", ip: "10.10.100.11#{i}"
