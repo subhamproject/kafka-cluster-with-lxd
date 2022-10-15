@@ -38,10 +38,7 @@ chown -R kafka:kafka /kafka
 
 sudo -u kafka mkdir -p /kafka/log
 
-mkdir -p /kafka/log
-
-mkdir -p /kafka/logs
-
+sudo -u kafka mkdir -p /kafka/logs
 
 cat > /etc/systemd/system/kafka.service << EOF
 [Unit]
