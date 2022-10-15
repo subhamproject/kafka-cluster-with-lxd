@@ -106,7 +106,7 @@ done
 log_info "*** ${GREEN} PLEASE WAIT SPINNING UP ALL THE SERVERS MAY TAKE A WHILE *** ${CLEAR}"
 echo -e "\n"
 sleep 60
-for server in kafka1 kafka2 kafka3 zk1 zk2 zk3
+for server in dummy kafka1 kafka2 kafka3 zk1 zk2 zk3
 do
 sleep 15
 image=$(select_random "${image_list[@]}")
@@ -174,3 +174,4 @@ done
 spin_server
 copy_script
 
+log_info "*** ${GREEN} KAFKA VERSION :- $(lxc exec kafka2 -- bash /kafka/bin/kafka-topics.sh --version <</dev/null) HAS BEEN CONFIGURED *** ${CLEAR}"
