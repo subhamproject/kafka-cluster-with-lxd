@@ -134,7 +134,7 @@ echo " OK!"
 
 
 function copy_script() {
-for count in  kafka1 kafka2 kafka3 zk1 zk2 zk3
+for server in  kafka1 kafka2 kafka3 zk1 zk2 zk3
 do
 sleep 10
 if [[  $(sudo lxc ls -c ns --format csv $server |grep RUNNING|cut -f1 -d,|wc -l) -ge 1 ]];then
