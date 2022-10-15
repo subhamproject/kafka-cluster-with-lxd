@@ -183,8 +183,6 @@ sleep 5
 sudo lxc exec $server -- service kafka start </dev/null
 ;;
 zk*)
-sudo lxc exec $server -- service zookeeper stop </dev/null
-sleep 5
 sudo lxc exec $server -- service zookeeper start </dev/null
 ;;
 esac
